@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice - Teste</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="invoice-container">
+    <div class="header">
+      <div class="logo-box">+ Adicione seu logotipo</div>
+      <div class="invoice-title">
+        <h2>INVOICE</h2>
+        <p># 29/1</p>
+        <p>Date: Sep 26, 2025</p>
+        <p>Due Date: Aug 26, 2025</p>
+      </div>
+    </div>
+
+    <div class="addresses">
+      <div class="address-box">
+        <strong>From:</strong><br>
+        FABIO L. D. MESQUITA Consultoria em Tecnologia da Informação LTDA<br>
+        50.194.068/0001-77
+      </div>
+      <div class="address-box">
+        <strong>Bill To:</strong><br>
+        Mainfyld, Lda<br>
+        NIF 513140301<br>
+        Av. Casal Ribeiro 14 2º Piso, 1000-092 Arroios Lisboa<br>
+        drh@fyld.pt
+      </div>
+    </div>
+
+    <table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Rate</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>    
+      <td>
+  <label for="item1" class="sr-only">Descrição do item</label>
+ <p>Consultoria em informática</p>
+</td>
+<td>
+  <label for="qtd1" class="sr-only">Quantidade</label>
+  <p>1</p>
+</td>
+<td>
+  <label for="rate1" class="sr-only">Taxa</label>
+ <p>0.00</p>
+</td>
+<td>
+  <label for="amount1" class="sr-only">Valor</label>
+  <input id="amount1" type="number" step="0.01" value="0.00" readonly>
+</td>
+
+  </tbody>
+</table>
+
+
+    <div class="notes">
+      <textarea placeholder="Notas - qualquer informação relevante ainda não abordada"></textarea>
+    </div>
+
+    <div class="summary">
+      <table>
+        <tr>
+          <label for="subTotal" class="sr-only">Subtotal</label>
+          <td>
+         <input id="amount1" type="number" step="0.01" value="0.00" readonly></td>
+        </tr>
+        <tr><td>Tax (0%)</td><td>0%</td></tr>
+        <tr><td>Total</td><td>€ 3,46</td></tr>
+              </table>
+    </div>
+
+    <div class="terms">
+      <strong>Terms:</strong><br>
+      EUR – Euro<br>
+      Intermediary bank: Swift: SCHESMM — Banco Santander<br><br>
+      Destination bank: Swift: BBOBRSP — Beneficiary bank: BANCO BONSUCESSO<br><br>
+      Beneficiary: FÁBIO L D MESQUITA CONSULTORIA EM TECNOLOGIA DA INFORMAÇÃO<br>
+      IBAN: BR171072786000501914608001
+    </div>
+  </div>
+</body>
+</html>
