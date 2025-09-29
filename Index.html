@@ -5,16 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invoice - Teste</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/summary.js" defer></script>
+  <script src="js/invoiceNumber.js" defer></script>
+  <script src="js/invoiceDates.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="js/generatePDF.js" defer></script>
 </head>
 <body>
   <div class="invoice-container">
     <div class="header">
-      <div class="logo-box">+ Adicione seu logotipo</div>
+     
       <div class="invoice-title">
-        <h2>INVOICE</h2>
-        <p># 29/1</p>
-        <p>Date: Sep 26, 2025</p>
-        <p>Due Date: Aug 26, 2025</p>
+        <div class="invoice-title-right">
+          <h2>INVOICE</h2>
+          <p># <span id="invoice-number"></span></p>
+          <p>Date: <span id="invoice-date"></span></p>
+          <p>Due Date: <span id="due-date"></span></p>
+          <div class="invoice-btns">
+            <button id="new-invoice-btn" class="new-invoice-btn">Nova Invoice</button>
+            <button id="generate-pdf-btn" class="generate-pdf-btn">Gerar PDF</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -31,6 +43,11 @@
         Av. Casal Ribeiro 14 2º Piso, 1000-092 Arroios Lisboa<br>
         drh@fyld.pt
       </div>
+    </div>
+
+    <div class="balance-due-bar">
+      <span>Balance Due:</span>
+      <span class="balance-due-value">€ <span id="balance-due">0.00</span></span>
     </div>
 
     <table>
@@ -58,7 +75,7 @@
 </td>
 <td>
   <label for="amount1" class="sr-only">Valor</label>
-  <input id="amount1" type="number" step="0.01" value="0.00" readonly>
+  <input id="amount1" type="number" step="0.01" value="0.00">
 </td>
 
   </tbody>
@@ -70,15 +87,20 @@
     </div>
 
     <div class="summary">
-      <table>
+      <table class="summary-table">
         <tr>
-          <label for="subTotal" class="sr-only">Subtotal</label>
-          <td>
-         <input id="amount1" type="number" step="0.01" value="0.00" readonly></td>
+          <td class="align-right">Subtotal</td>
+          <td class="align-right"><span id="subtotal">0.00</span></td>
         </tr>
-        <tr><td>Tax (0%)</td><td>0%</td></tr>
-        <tr><td>Total</td><td>€ 3,46</td></tr>
-              </table>
+        <tr>
+          <td class="align-right">Tax (0%)</td>
+          <td class="align-right"><span id="tax">0.00</span></td>
+        </tr>
+        <tr>
+          <td class="align-right total-label">Total</td>
+          <td class="align-right total-label">€ <span id="total">0.00</span></td>
+        </tr>
+      </table>
     </div>
 
     <div class="terms">
