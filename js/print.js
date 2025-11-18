@@ -1,9 +1,9 @@
 // Adiciona funcionalidade para imprimir a invoice
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('generate-pdf-btn').addEventListener('click', function() {
+  document.getElementById('print-btn').addEventListener('click', function() {
     // Oculta os botões antes de imprimir
-    var btns = [document.getElementById('generate-pdf-btn'), document.getElementById('new-invoice-btn')];
+    var btns = [document.getElementById('print-btn'), document.getElementById('new-invoice-btn')];
     btns.forEach(function(btn) { if (btn) btn.style.display = 'none'; });
 
     // Troca o input pelo valor recebido

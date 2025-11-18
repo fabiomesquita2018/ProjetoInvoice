@@ -11,6 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="js/generatePDF.js" defer></script>
+  <script src="js/print.js" defer></script>
 </head>
 <body>
   <div class="invoice-container">
@@ -24,7 +25,7 @@
           <p>Due Date: <span id="due-date"></span></p>
           <div class="invoice-btns">
             <button id="new-invoice-btn" class="new-invoice-btn">Nova Invoice</button>
-            <button id="generate-pdf-btn" class="generate-pdf-btn">Gerar PDF</button>
+            <button id="print-btn" class="print-btn">Imprimir</button>
           </div>
         </div>
       </div>
@@ -105,11 +106,21 @@
 
     <div class="terms">
       <strong>Terms:</strong><br>
-      EUR – Euro<br>
-      Intermediary bank: Swift: SCHESMM — Banco Santander<br><br>
-      Destination bank: Swift: BBOBRSP — Beneficiary bank: BANCO BONSUCESSO<br><br>
-      Beneficiary: FÁBIO L D MESQUITA CONSULTORIA EM TECNOLOGIA DA INFORMAÇÃO<br>
-      IBAN: BR171072786000501914608001
+      EUR – Euro<br><br>
+      Account holder<b></b><br>
+      FABIO L. D. MESQUITA CONSULT EM TEC DA INF LTDA<br><br>
+      IBAN <b></b><br>
+      BE82 9057 6137 8568<br><br>
+      BIC <b></b><br>
+      TRWIBEB1XXX<br><br>
+      Account number <b></b><br>
+      7613785<br><br>
+      Bank name and address <b></b><br><br>
+      Wise
+      Rue du Trône 100, 3rd floor
+      Brussels
+      1050
+      Belgium<br><br>
     </div>
   </div>
 </body>
