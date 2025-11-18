@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var btns = [document.getElementById('print-btn'), document.getElementById('new-invoice-btn')];
     btns.forEach(function(btn) { if (btn) btn.style.display = 'none'; });
 
+    // Oculta a seção de notas
+    var notesSection = document.querySelector('.notes');
+    if (notesSection) notesSection.style.display = 'none';
+
     // Troca o input pelo valor recebido
     var amountInput = document.getElementById('amount1');
     var amountValue = amountInput.value;
@@ -20,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Restaura os botões após imprimir
     btns.forEach(function(btn) { if (btn) btn.style.display = ''; });
+    // Restaura a seção de notas
+    if (notesSection) notesSection.style.display = '';
     // Restaura o input Amount
     amountParent.replaceChild(amountInput, amountLabel);
   });
